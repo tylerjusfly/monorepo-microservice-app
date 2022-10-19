@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/gateway/src",
+  "monorepo": true,
+  "root": "apps/gateway",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/gateway/tsconfig.app.json"
+  },
+  "projects": {
+    "gateway": {
+      "type": "application",
+      "root": "apps/gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateway/tsconfig.app.json"
+      }
+    },
+    "products": {
+      "type": "application",
+      "root": "apps/products",
+      "entryFile": "main",
+      "sourceRoot": "apps/products/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/products/tsconfig.app.json"
+      }
+    },
+    "utils-library": {
+      "type": "library",
+      "root": "libs/utils-library",
+      "entryFile": "index",
+      "sourceRoot": "libs/utils-library/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/utils-library/tsconfig.lib.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    }
+  }
+}
