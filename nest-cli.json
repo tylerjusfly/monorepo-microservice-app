@@ -44,6 +44,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/shared/tsconfig.lib.json"
       }
+    },
+    "admissions": {
+      "type": "application",
+      "root": "apps/admissions",
+      "entryFile": "main",
+      "sourceRoot": "apps/admissions/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/admissions/tsconfig.app.json"
+      }
     }
   }
 }

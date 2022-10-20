@@ -1,4 +1,3 @@
-import { UtilsLibraryService } from '@app/utils-library';
 import { Controller, Get } from '@nestjs/common';
 import { GatewayService } from './gateway.service';
 

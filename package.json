@@ -10,7 +10,7 @@
     "build": "nest build",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start --watch",
-    "start:all": "concurrently \"nest start\" \"nest start products\" ",
+    "start:all": "concurrently \"nest start --watch\" \"nest start products --watch\" \"nest start admissions --watch ",
     "start:dev": "nest start products --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",

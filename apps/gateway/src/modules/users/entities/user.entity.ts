@@ -9,8 +9,8 @@ export class UserEntity extends BaseEntity {
   @Column({ type: 'text', nullable: true })
   password: string;
 
-  @Column({ type: 'text', nullable: true })
-  bitconWallet: string;
+  @Column({ type: 'varchar', nullable: true })
+  username: string;
 
   @Column({ type: 'text', nullable: true })
   bio: string;

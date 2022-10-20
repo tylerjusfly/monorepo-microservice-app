@@ -1,5 +1,7 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { CafeteriaItem } from 'apps/products/src/entity/cafeteria_item.entity';
+import { AdmissionEntity } from 'apps/admissions/src/entity/admission.entity';
+import { CafeteriaItem } from '../products/src/entity/cafeteria_item.entity';
+import { UserEntity } from './src/modules/users/entities/user.entity';
 
 /*Creating database Options */
 export const dbConfig: TypeOrmModuleOptions = {
@@ -10,6 +12,5 @@ export const dbConfig: TypeOrmModuleOptions = {
   host: '127.0.0.1',
   database: 'group_db',
   synchronize: true,
-  //entities: [UserEntity, CafeteriaItem],
-  entities: [__dirname + '/*/.entity{.ts,.js}', CafeteriaItem],
+  entities: [CafeteriaItem, UserEntity, AdmissionEntity],
 };
