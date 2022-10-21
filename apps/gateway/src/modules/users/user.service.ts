@@ -28,4 +28,18 @@ export class UserService {
       throw error;
     }
   }
+
+  async getUserById(id: number) {
+    try {
+      const user = await this.userRepository.findOneBy({ id });
+
+      if (!user) {
+        return { success: false, message: 'user not found' };
+      }
+
+      return { success: true, user };
+    } catch (error) {
+      throw error;
+    }
+  }
 }
