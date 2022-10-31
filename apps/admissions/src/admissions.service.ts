@@ -1,8 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { AdmissionEntity } from './entity/admission.entity';
-import { AdmissionDto } from '@app/shared';
+import { AdmissionDto, AdmissionEntity } from '@app/shared';
 import { Utilities } from '@app/utils-library';
 import { firstValueFrom } from 'rxjs';
 import { ClientKafka } from '@nestjs/microservices';
@@ -42,7 +41,7 @@ export class AdmissionsService {
         isAccepted: data.isAccepted,
       });
 
-      return { result, userDetails };
+      return { result, user: userDetails.user };
     } catch (error) {
       throw error;
     }

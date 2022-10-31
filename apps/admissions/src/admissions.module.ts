@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AdmissionsController } from './admissions.controller';
 import { AdmissionsService } from './admissions.service';
-import { SharedModule } from '@app/shared';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { dbConfig } from 'apps/gateway/orm.config';
-import { AdmissionEntity } from './entity/admission.entity';
+import { SharedModule, GatewayDatabaseModule, AdmissionEntity } from '@app/shared';
+
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
@@ -25,7 +24,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       },
     ]),
     SharedModule,
-    TypeOrmModule.forRoot(dbConfig),
+    GatewayDatabaseModule,
     TypeOrmModule.forFeature([AdmissionEntity]),
   ],
   controllers: [AdmissionsController],

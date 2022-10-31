@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CafeteriaItem } from './entity/cafeteria_item.entity';
-import { ProductDto, PaginationOptionsInterface } from '@app/shared';
+import { ProductDto, PaginationOptionsInterface, CafeteriaItem } from '@app/shared';
 
 @Injectable()
 export class ProductsService {
