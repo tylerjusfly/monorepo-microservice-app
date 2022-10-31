@@ -14,10 +14,9 @@ const dbConfig: TypeOrmModuleOptions = {
   host: '127.0.0.1',
   database: 'group_db',
   synchronize: true,
-  //   autoLoadEntities: true,
-  entities: [UserEntity, AdmissionEntity, CafeteriaItem],
+  autoLoadEntities: true,
+  // entities: [__dirname + 'src/**/*.entity.{js, ts}'],
 };
-
 @Module({
   imports: [TypeOrmModule.forRoot(dbConfig)],
 })
